@@ -1,0 +1,207 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modificación de la plantilla original de esta url: 
+% https://www.overleaf.com/latex/templates/tesis-ipn-cic/xqrvnwbtqfnw
+
+% Adaptada para la ESIME IPN.
+% Cualquier sugerencia, corrección o comentario a: https://github.com/rulzco
+
+% La plantilla requiere de :
+% \usepackage{titlePage} y el archivo titlepage.sty en el mismo directorio de trabajo.
+% y los campos (sin signo %) :
+
+\documentclass[letterpaper,12pt,oneside]{book}
+%\usepackage[top=1in, left=1.25in, right=1.25in, bottom=1in]{geometry} % Tamaño de papel y margen
+\usepackage{lipsum}
+\usepackage[top=1in, left=0.9in, right=1.25in, bottom=1in]{geometry}
+\usepackage{titlePage}
+\usepackage{subfiles}
+%\usepackage{titlesec} % remueve la palabra «Capítulo» de \chapter
+%\titleformat{\chapter} % Config titlesec
+%	{\Large\bfseries}	% 
+%	{\huge \thechapter}	% 
+%	{20pt}				% 
+%	{\huge}				% 
+\usepackage[titletoc]{appendix} % Añade palabra «Apéndice» en Índice y define el ambiente appendices
+\setlength{\parindent}{0em} % espacio de la sangría
+\setlength{\parskip}{1em} % espacio entre párrafos
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+%\captionsetup{font=small} % Tamaño fuente 10pt en caption
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+%\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{ifthen}
+\usepackage{multicol} % páginas con múltiples columnas
+\usepackage{multirow} % tablas con múltiples filas
+\usepackage{doi}
+\usepackage{url}
+\usepackage{booktabs}  % tablas de mayor calidad
+\usepackage{graphicx} 
+\usepackage{tikz} % crear elementos gráficos en LaTeX
+\usepackage{tocloft} % tipografía de Tabla de contenidos, lista de figuras,lista de tablas
+\usepackage{caption}
+\usepackage{subcaption}
+\graphicspath{{figs/}}
+\usepackage{setspace}
+\usepackage{comment} % comentarios de bloques
+\usepackage{hyperref}
+\urlstyle{same}
+\hypersetup{
+   bookmarksopen = true,
+   bookmarksnumbered = true,
+   breaklinks = true,
+   colorlinks=true,
+   urlcolor=cyan,
+   linkcolor=black,
+   citecolor=red,
+   filecolor=magenta,
+   pdftitle={Sharelatex Example},
+   pdfpagemode=FullScreen,
+}
+
+%\usepackage[natbibapa]{apacite} % citar estilo APA
+\usepackage[square, sort, numbers,colon ]{natbib}  
+
+\usepackage{xcolor} % definir colores
+\definecolor{Verde}{RGB}{0,133,60}
+\definecolor{Plata}{RGB}{155,162,168}
+
+\usepackage{amsmath,amsfonts} % ecuaciones y símbolos matemáticos
+\usepackage[spanish]{cleveref}% \cref >> considera el tipo de ambiente usado.
+\crefname{table}{Tabla}{Tablas}
+%\crefname{equation}{Ec.}{Ec.}
+%\crefname{figure}{Fig.}{Fig.}
+\usepackage{longtable} % tablas extensas
+\usepackage{breqn} % dividir ecuaciones largas con dmath
+\usepackage{dirtree} % arboles de directorios
+\usepackage{listingsutf8}  % insertar código
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{myStyle}{ %definir el estilo del código
+    language=C++,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    keepspaces=true,                 
+    numbers=left,       
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+}
+
+\usepackage{physics,siunitx} % physics define cosas como \pdv para derivadas parciales, notación de Dirac y demás. siunitx tiene una descripción para "desesperados" en su documentación que es bastante útil.
+\sisetup{ % Config. global de Siunitx
+open-bracket = {},close-bracket = {}, % quita paréntesis de números 
+range-phrase = {\translate{ a }}, % Traduce "to" a español
+list-final-separator = {\translate{ y }}, % Traduce "and" a español
+list-pair-separator = {\translate{ y }}, % Traduce "and" a español
+%parse-numbers = false, % Poder usar formato S con datatool en tablas
+table-number-alignment = center-decimal-marker, % Alinea al centro el punto decimal en tablas
+per-mode = symbol
+}
+
+% encabezados personalizados
+%\pagestyle{fancy}
+%\addtolength{\headheight}{12.5pt}
+%\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter. #1 }}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\fancyhf{}
+%\fancyhead[RO]{\rightmark}
+%\fancyhead[LE]{\leftmark}
+%\fancyfoot[C]{\thepage}
+%\renewcommand{\headrulewidth}{0.5pt}
+%\renewcommand{\footrulewidth}{0.1pt}
+
+%\addtolength{\headheight}{12.5pt}
+%\fancypagestyle{plain}{
+%  \fancyhead{}
+%  \renewcommand{\headrulewidth}{0pt}
+%}
+
+%\renewcommand\cftsecpresnum{\S}
+%\renewcommand\cftsubsecpresnum{\S}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definir los campos de la portada
+% y los campos (sin signo %) :
+\author{M.en C.}
+\title{Título de la tesis} 
+\faculty{Escuela Superior de Ingeniería Mecánica y Eléctrica, \\Unidad Zacatenco} % escuela
+\degree{Dr. en Ciencias} % grado a obtener
+\supervisor{ Tutor} % directores
+\cityandyear{Ciudad de México \\20--} % lugar y fecha
+\logouni{escudoIPN} %logo IPN
+\logofac{escudoESIME} % logo ESIME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frontmatter
+\maketitle % crea la carátula
+%\include{frontmatter/portada} %  carátula alternativa
+%------------------------------------------
+% DEDICATORIA
+%------------------------------------------
+\chapter*{}
+%\vspace{2cm}
+\begin{flushright}
+	{\fontfamily{ppl}%Palatino
+	\selectfont\emph{<<It's the questions we can't answer that teach us the most. They teach us how to think. If you give a man an answer, all he gains is a little fact. But give him a question and he'll look for his own answers.>>}\\
+\vspace{5mm}
+	Patrick Rothfuss}
+
+\end{flushright}
+\vfill
+%------------------------------------------
+% AGRADECIMIENTOS
+%------------------------------------------
+\chapter{Agradecimientos}
+\lipsum[6-9]
+
+
+\include{frontmatter/frontmater}
+\include{Intro/intro}
+
+%------------------------------------------
+% CAPÍTULOS
+%------------------------------------------
+\mainmatter
+\include{Ch1/ch1}
+\include{Ch2/ch2}
+\include{Ch3/ch3}
+\include{Ch4/ch4}
+
+
+\backmatter%@sglvgdor
+\include{backmatter/conclusiones}
+
+%------------------------------------------
+% APÉNDICES
+%------------------------------------------
+\begin{appendices}
+\appendix
+%\include{apendices/ap1}
+\chapter{Insertar código}
+\subfile{apendices/ap1}
+
+\end{appendices}
+
+
+%\bibliographystyle{apacite}
+\bibliographystyle{unsrtnat}
+\bibliography{References/refs.bib}
+
+
+\end{document}

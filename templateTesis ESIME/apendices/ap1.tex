@@ -1,0 +1,20 @@
+\documentclass[../Main.tex]{subfiles}
+%\chapter{Insertar código}\label{apen:1}
+\label{c:codigo}
+
+\begin{lstlisting}[style=myStyle,firstnumber=58]
+        // Momentum predictor
+
+        fvVectorMatrix UEqn
+        (
+            fvm::ddt(U)
+          + fvm::div(phi, U)
+          - fvm::laplacian(nu, U)
+        );
+\end{lstlisting}
+
+Código desde un archivo: 
+
+\lstinputlisting[language=C++,numbers=left,,frame=L, firstline=1, lastline=20]{createFields.H}
+
+\end{document}
