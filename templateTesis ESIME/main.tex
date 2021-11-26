@@ -63,9 +63,14 @@
    pdfpagemode=FullScreen,
 }
 
+% \usepackage[backend=biber,bibstyle=numeric-comp,citestyle=numeric-comp,
+% sorting=none,natbib=true]{biblatex} % biografía biblatex
+% \addbibresource{referencias.bib} % carga el archivo de la bibliografía
+%% alternativas de bibliografía con natbib
 %\usepackage[natbibapa]{apacite} % citar estilo APA
 \usepackage[square, sort, numbers,colon ]{natbib}  
 
+\usepackage[version=3]{acro} % incluir acronimos
 \usepackage{xcolor} % definir colores
 \definecolor{Verde}{RGB}{0,133,60}
 \definecolor{Plata}{RGB}{155,162,168}
@@ -132,6 +137,8 @@ per-mode = symbol
 
 %\renewcommand\cftsecpresnum{\S}
 %\renewcommand\cftsubsecpresnum{\S}
+
+\newcommand\Rey{\mbox{\textit{Re}}} % Numero de Reynolds itálicas en párrafos Ejemplo: El \Rey es la relación de fuerzas...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definir los campos de la portada
