@@ -1,7 +1,7 @@
-\documentclass[../Main.tex]{subfiles}
-\begin{document}
-%\chapter{Insertar código}\label{apen:1}
-\label{c:codigo}
+% \documentclass[../Main.tex]{subfiles}
+% \begin{document}
+\addappheadtotoc % añade la palabra "Apéndices" antes listarlos en la tabla de contenido
+\chapter{Insertar código}\label{c:codigo}
 
 \begin{lstlisting}[style=myStyle,firstnumber=58]
         // Momentum predictor
@@ -16,6 +16,6 @@
 
 Código desde un archivo: 
 
-\lstinputlisting[language=C++,numbers=left,,frame=L, firstline=1, lastline=20]{createFields.H}
+\lstinputlisting[language=C++,numbers=left,,frame=L, firstline=1, lastline=20]{apendices/createFields.H}
 
-\end{document}
+% \end{document}

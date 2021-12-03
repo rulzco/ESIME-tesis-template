@@ -1,11 +1,15 @@
 % enlaces de color negro en la tabla de contenidos y lista de figuras
-%{
-%  \hypersetup{linkcolor=black}
-%  \tableofcontents
-%  \listoffigures
-%}
-\tableofcontents
-\listoffigures
+{
+ \hypersetup{linkcolor=black}
+ \tableofcontents
+ \listoffigures
+}
+% \tableofcontents % tabla de contenidos
+% \listoffigures
 
-\chapter{Notación}
 
+% \chapter{Notación} % Descomentar si no se usa \printnomenclature
+\printnomenclature
+\printacronyms[include=acro,heading=section*,name=Acrónimos]
+
+% \printacronyms[include=nomencl,name=Nomenclature
